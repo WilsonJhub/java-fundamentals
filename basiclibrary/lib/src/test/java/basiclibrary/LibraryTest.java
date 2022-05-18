@@ -11,4 +11,19 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+    @Test void someMethodNamedRoll() {
+
+    }
+
+    @Test void someMethodNameContainsDuplicate() {
+
+    }
+
+    @Test void someMethodNamedCalcAvgOfArray() {
+
+    }
+
+    @Test void someMethodNamedLowestAvgArrayImproved() {
+
+    }
 }
