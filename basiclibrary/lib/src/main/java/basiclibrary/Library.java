@@ -3,8 +3,11 @@
  */
 package basiclibrary;
 
-
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -49,4 +52,48 @@ public class Library {
         }
         return lowestAvgArray;
     }
+    public String analyzeWeatherData(int[][] temps){
+        HashSet<Integer> tempSet = new HashSet<>();
+        int min = 100;
+        int max = 0;
+        for(int[] array : temps){
+            for(int value : array){
+                tempSet.add(value);
+                if(value < min){
+                    min = value;
+                }
+                if(value > max){
+                    max = value;
+                }
+            }
+        }
+        String response = "High: " + max + "\n"
+                + "Low: " + min + "\n";
+        for(int i = min; i < max; i++){
+            if(!tempSet.contains(i)){
+                response += "Never saw temperature: " + i + "\n";
+            }
+        }
+        return response;
+    }
+
+    public String tally(List<String> votes){
+        HashMap<String, Integer> count = new HashMap<>();
+        int topVoter = 0;
+        String winner = "";
+        for(String name : votes){
+            if(!count.containsKey(name)){
+                count.put(name, 1);
+            }
+            else {
+                count.put(name, count.get(name) + 1);
+                if(count.get(name) > topVoter){
+                    winner = name;
+                    topVoter = count.get(name);
+                }
+            }
+        }
+        return winner;
+    }
 }
+
