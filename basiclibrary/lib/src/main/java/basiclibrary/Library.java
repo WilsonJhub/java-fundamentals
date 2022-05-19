@@ -80,7 +80,7 @@ public class Library {
     public String tally(List<String> votes){
         HashMap<String, Integer> count = new HashMap<>();
         int topVoter = 0;
-        String winner = "";
+        String youWin = "";
         for(String name : votes){
             if(!count.containsKey(name)){
                 count.put(name, 1);
@@ -88,12 +88,12 @@ public class Library {
             else {
                 count.put(name, count.get(name) + 1);
                 if(count.get(name) > topVoter){
-                    winner = name;
+                    youWin = name;
                     topVoter = count.get(name);
                 }
             }
         }
-        return winner;
+        return youWin;
     }
 }
 
