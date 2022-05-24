@@ -3,8 +3,8 @@
 
 ## Files/Methods
 Files: Basics/Main.java
-
-### Lab 1 - Create the following Methods in the ***basics*** folder:
+-- -
+### Lab 1 - Created the following Methods in the ***basics*** folder:
 
 - public class Main
 - public static void main
@@ -18,7 +18,7 @@ Files: Basics/Main.java
 - [Raul Zarate](https://github.com/zaratr)  
 - [Michael Brunette](https://github.com/mcbrunette33)  
 - [Abdulahi Mohamud](https://github.com/AbdulahiMohamud)
-            
+-- -            
 
 ### Lab 2 - Created the following Methods in the ***basiclibrary*** folder:
 
@@ -36,10 +36,29 @@ and return the array with the lowest average.
 - [Raul Zarate](https://github.com/zaratr)
 - [Michael Brunette](https://github.com/mcbrunette33)  
 - [Abdulahi Mohamud](https://github.com/AbdulahiMohamud)
-
+-- -
 
 ### Lab 3 - Created the following Methods in the ***basiclibrary*** folder:
 
 - **analyzeWeatherData:** iterate through data to find the min and max values. 
 - **tally:** accepts a List of Strings representing votes and returns one string  
-  to show what got the most votes.
+  to show what got the most votes.  
+-- -
+
+### Lab 6 - Created the following Methods/Classes/Objects in the ***inheritance*** folder:  
+multiple @Test to verify functional methods.
+
+***Class:***
+  - Restaurant
+  - Review  
+
+***Object:***
+  - Restaurant
+  - Review  
+
+    Each consisting of multiple properties. 
+
+
+***Assisted by:***  
+- [Raul Zarate](https://github.com/zaratr)
+-- -
