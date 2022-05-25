@@ -62,3 +62,10 @@ multiple @Test to verify functional methods.
 ***Assisted by:***  
 - [Raul Zarate](https://github.com/zaratr)
 -- -
+
+### Lab 7 - Added Classes and modularized project.  
+- Added Classes: Business(base class), Theatre, and Shop.   
+- Added ArrayLists with corresponding Tests to verify passing functionality
+
+***Assisted by:***  
+- [Roger Reyes](https://github.com/RogerMReyes)
