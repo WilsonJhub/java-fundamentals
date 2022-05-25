@@ -6,7 +6,7 @@ public class Review {
     public String author;
     public int stars;
 
-    public Review(String body, String author, int stars, Restaurant SaltGrass){
+    public  Review(String body, String author, int stars, Restaurant SaltGrass){
         this.body = body;
         this.author = author;
         this.stars = stars;
