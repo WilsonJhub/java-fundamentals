@@ -4,34 +4,55 @@
 package inheritance;
 
 import org.junit.jupiter.api.Test;
+
+import javax.xml.namespace.QName;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
+    @Test
+    void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
-    @Test void testingZero(){
-        Restaurant McDonalds = new Restaurant();
-        assertTrue(McDonalds.name == "");
-        return;
-    }
-    @Test void testingToString(){
-        Restaurant PizzaHut = new Restaurant ("$", "Pizza Hut", 1);
+
+    //    @Test void testingZero(){
+//        Restaurant McDonalds = new Restaurant();
+//        assertTrue(McDonalds.name == "");
+//        return;
+//    }
+    @Test
+    void testingToString() {
+        Restaurant PizzaHut = new Restaurant("$", "Pizza Hut", 1);
         assertTrue(PizzaHut.toString() != null);
     }
-    @Test void testingReview() {
+
+    @Test
+    void testingReview() {
         Restaurant SaltGrass = new Restaurant("$", "Salt Grass", 5);
         Review sut = new Review("hello", "Jason Wilson", 5, SaltGrass);
 //        assertTrue(sut.toString() == "Restaurant: " + "SaltGrass" + " has a rating of " + 5 + " and a price category of " + "$");
 //        assertTrue(sut.toString() == SaltGrass + " " + SaltGrass.priceCategory + " reviewed by: " + "Jason Wilson" + " \n" + "this radio maintenance with a radio test, how copy?" + " \n");
-            assertEquals("Salt Grass $ reviewed by: Jason Wilson \nhello \n", sut.toString());
+        assertEquals("Salt Grass $ reviewed by: Jason Wilson \nhello \n", sut.toString());
         return;
     }
-    @Test void testingAddReview(){
+
+    @Test
+    void testingAddReview() {
         Restaurant addReviewVar = new Restaurant("hello", "Jason Wilson", 5);
         addReviewVar.addReview(new Review("is..pimping", "Raul", 4, addReviewVar));
         assertTrue(addReviewVar.restReviews.size() == 1);  // TODO: How to use contains?
         return;
+    }
+
+    @Test
+    void testingAddMoviesToArrayListMethod() {
+        Theatre sut = new Theatre("Regal");
+        sut.addMoviesToArrayList("Star Wars");
+        assertEquals("Star Wars", sut.movies.get(0));// TODO: Research .get "GET BETTER, GET SMARTER, KEEP LEARNING"
+        sut.removeMoviesFromArrayList("Star Wars");
+        assertEquals(0, sut.movies.size());
+        System.out.println(sut.movies);
     }
 }
