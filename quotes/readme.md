@@ -22,3 +22,7 @@
 - [Roger Reyes](https://github.com/RogerMReyes)
 - [Raul Zarate](https://github.com/zaratr)
 - Alex White 
+
+
+
+![Quotes Design Document](Quotes.jpg)
