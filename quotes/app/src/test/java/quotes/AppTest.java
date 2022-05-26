@@ -18,7 +18,7 @@ class AppTest {
     @Test void testReturnsRandomPopularBookQuote() throws IOException {
         String myFilePath = "src/test/resources/recentquotes.json";
         GsonStreamer sut = new GsonStreamer(myFilePath);
-        boolean gotFile = sut.getFile(myFilePath);
+        boolean gotFile = sut.getFile();
         assertTrue(gotFile);
         String results = sut.getRandomQuote();
         assertTrue(results.length() > 0);
@@ -26,12 +26,12 @@ class AppTest {
 
     @Test void testGetFileMethodThrowsIOException(){
         GsonStreamer sut = new GsonStreamer("gibberish");
-        assertThrows(IOException.class, () -> {sut.getFile("gibberish");});
+        assertThrows(IOException.class, () -> {sut.getFile();});
     }
     @Test void testGetFileMethodReturnsTrue() throws IOException {
         String myFilePath = "src/test/resources/recentquotes.json";
         GsonStreamer sut = new GsonStreamer(myFilePath);
-        assertTrue(sut.getFile(myFilePath));
+        assertTrue(sut.getFile());
     }
 
 }

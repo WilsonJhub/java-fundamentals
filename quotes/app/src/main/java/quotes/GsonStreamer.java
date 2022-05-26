@@ -22,7 +22,7 @@ public class GsonStreamer {
         readInFile = new ArrayList<RecentQuote>();
     }
 
-    public boolean getFile(String fileName) throws IOException {
+    public boolean getFile() throws IOException {
         File recentQuote = new File(fileName);
         FileReader quoteFileReader = new FileReader(recentQuote);
 
