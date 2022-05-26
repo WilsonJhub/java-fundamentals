@@ -12,5 +12,13 @@
 -- -
 
 ***Project Team:***  
-- Jason Wilson
-- Jon Rumsey
+- Jason Wilson (Gson) 
+- [Jon Rumsey](https://github.com/nojronatron)
+- [Abdulahi Mohamud](https://github.com/AbdulahiMohamud)
+- [Chuck Altopiedi](https://github.com/ChuckAlto)
+
+
+***Assisted by:***
+- [Roger Reyes](https://github.com/RogerMReyes)
+- [Raul Zarate](https://github.com/zaratr)
+- Alex White 
