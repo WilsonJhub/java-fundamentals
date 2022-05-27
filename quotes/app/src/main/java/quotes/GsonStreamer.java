@@ -47,4 +47,6 @@ public class GsonStreamer {
 
         return selectedQuote.author + " " + selectedQuote.text;
     }
+
+
 }
