@@ -5,13 +5,25 @@ package quotes;
 
 import com.google.gson.Gson;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.io.IOException;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+
+
+    public static void main(String[] args) throws IOException {
+        try {
+            GetMeAQuote getMeAQuote = null;
+            if (args.length > 0){
+            String filePath = args[0];
+                getMeAQuote = new GetMeAQuote(filePath);
+            } else {
+                getMeAQuote = new GetMeAQuote();
+            }
+            String result = getMeAQuote.getTheQuotes();
+            System.out.println(result);
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
 

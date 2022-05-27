@@ -6,19 +6,18 @@ package quotes;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
+
+
     //this will test your method that returns a random book quote
     @Test void testReturnsRandomPopularBookQuote() throws IOException {
         String myFilePath = "src/test/resources/recentquotes.json";
         GsonStreamer sut = new GsonStreamer(myFilePath);
-        boolean gotFile = sut.getFile(myFilePath);
+        boolean gotFile = sut.getFile();
         assertTrue(gotFile);
         String results = sut.getRandomQuote();
         assertTrue(results.length() > 0);
@@ -26,12 +25,33 @@ class AppTest {
 
     @Test void testGetFileMethodThrowsIOException(){
         GsonStreamer sut = new GsonStreamer("gibberish");
-        assertThrows(IOException.class, () -> {sut.getFile("gibberish");});
+        assertThrows(IOException.class, () -> {sut.getFile();});
     }
     @Test void testGetFileMethodReturnsTrue() throws IOException {
         String myFilePath = "src/test/resources/recentquotes.json";
         GsonStreamer sut = new GsonStreamer(myFilePath);
-        assertTrue(sut.getFile(myFilePath));
+        assertTrue(sut.getFile());
+    }
+    @Test void testForismaticCreateRequestReturnsConnection() throws IOException {
+        ForismaticManager forismaticManager = new ForismaticManager();
+        HttpURLConnection ForismaticConnection = forismaticManager.createRequest();
+        int HttpActualResponseCode = ForismaticConnection.getResponseCode();
+        assertEquals(200, HttpActualResponseCode, "We expect an Http 200 response code");
+    }
+    @Test void testReadResponse() throws IOException {
+        ForismaticManager sut = new ForismaticManager();
+        HttpURLConnection connection = sut.createRequest();
+        StringBuffer response = sut.readResponse(connection);
+        assertTrue(response.length() > 0);
+    }
+    @Test void testParsedQuoteReturnsQuote() throws IOException {
+        ForismaticManager sut = new ForismaticManager();
+        HttpURLConnection connection = sut.createRequest();
+        StringBuffer response = sut.readResponse(connection);
+        Forismatic responseData = sut.parsedQuoteFromResponse(response);
+        assertTrue(responseData.quoteAuthor.length() > 0);
+        assertTrue(responseData.quoteText.length() > 0);
+
     }
 
 }
