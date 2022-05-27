@@ -16,13 +16,13 @@ public class GetMeAQuote {
     public String getTheQuotes() throws IOException {
         String result = "";
         if(this.fileName == ""){
-//            call swapimanager to attempt to get an API quote.
-            SWAPIManager swapiManager = new SWAPIManager();
+//            call Forismaticmanager to attempt to get an API quote.
+            ForismaticManager forismaticManager = new ForismaticManager();
             try {
-                HttpURLConnection swapiConnection = swapiManager.createRequest();
-                StringBuffer swapiBuffer = swapiManager.readResponse(swapiConnection);
-                StarWarsQuote swapiParser = swapiManager.parsedQuoteFromResponse(swapiBuffer);
-                result = swapiParser.content;
+                HttpURLConnection ForismaticConnection = forismaticManager.createRequest();
+                StringBuffer ForismaticBuffer = forismaticManager.readResponse(ForismaticConnection);
+                Forismatic ForismaticParser = forismaticManager.parsedQuoteFromResponse(ForismaticBuffer);
+                result = ForismaticParser.quoteAuthor + " " + ForismaticParser.quoteText;
             }
             catch (Exception ex){
             result = getGsonString();
