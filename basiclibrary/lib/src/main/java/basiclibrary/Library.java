@@ -43,7 +43,7 @@ public class Library {
         float avg = sum / array.length;
         return avg;
     }
-    public int[] lowestAvgArrayImproved(int[][] array){
+    public int[] lowestAvgArr(int[][] array){
         int[] lowestAvgArray = array[0];
         for(int i = 1; i < array.length; i++){
             if(calcAvgOfArray(lowestAvgArray) > calcAvgOfArray(array[i])){

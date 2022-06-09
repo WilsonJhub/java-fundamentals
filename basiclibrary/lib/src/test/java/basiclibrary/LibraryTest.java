@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,19 +18,26 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
-    @Test void someMethodNamedRoll() {
-
+    @Test void returnMethodReturnsRollsInAnArray() {
+        Library sut = new Library();
+        assertEquals(sut.roll(3).length, 3);
     }
 
-    @Test void someMethodNameContainsDuplicate() {
 
+    @Test void containsDuplicatesMethodReturnsTrueIfDuplicates() {
+        Library sut = new Library();
+        int[] testArr = {0,1,1};
+        System.out.println(sut.containsDuplicate(testArr));
+        assertTrue(sut.containsDuplicate(testArr));
     }
 
-    @Test void someMethodNamedCalcAvgOfArray() {
-
+    @Test void calcAvgOfArrayReturnsAverage() {
+        Library sut = new Library();
+        int[] testArr = {50, 100, 150, 200, 250};
+        assertEquals(sut.calcAvgOfArray(testArr), 150);
     }
 
-    @Test void someMethodNamedLowestAvgArrayImproved() {
+    @Test void lowestAvgArrReturnsArrayLowestAvg() {
 
     }
     @Test void analyzeWeatherDataTest(){
@@ -41,14 +48,15 @@ class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        assertEquals(sut.analyzeWeatherData(weeklyMonthTemperatures), """
-                High: 72
-                Low: 51
-                Never saw temperature: 63
-                Never saw temperature: 67
-                Never saw temperature: 68
-                Never saw temperature: 69
-                """);
+        int[] test = sut.lowestAvgArr(weeklyMonthTemperatures);
+        assertEquals(Arrays.toString(test),"[55, 54, 60, 53, 59, 57, 61]");
+
+        assertEquals(sut.analyzeWeatherData(weeklyMonthTemperatures), "High: 72"
+                + "\n" + "Low: 51"
+                + "\n" + "Never saw temperature: 63"
+                + "\n" + "Never saw temperature: 67"
+                + "\n" + "Never saw temperature: 68"
+                + "\n" + "Never saw temperature: 69"+ "\n");
     }
 
     @Test void tallyTest(){
